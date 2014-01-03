@@ -3,13 +3,19 @@ package com.inventles.data;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import com.inventles.data.management.InventlesSessionManagement;
 
 public abstract class AbstractFacade<T> {
+	@PersistenceContext(unitName = "InventlesServicesPU")
+	private EntityManager em;
 	private Class<T> entityClass;
 
 	public AbstractFacade(Class<T> entityClass) {
@@ -20,10 +26,27 @@ public abstract class AbstractFacade<T> {
 		return InventlesSessionManagement.INSTANCE.getSessionFactory();
 	}
 
-	/*
-	 * public void create(T entity) { getEntityManager().persist(entity); }
-	 * 
-	 * public void edit(T entity) { getEntityManager().merge(entity); }
+	
+	 public void create(T entity) { 
+		 Session sess = getSessionFactory().openSession();
+		
+		 Transaction tx = null;
+		 try {
+		     tx = sess.beginTransaction();
+		     sess.save(entity);
+		     tx.commit();
+		 }catch (Exception e) {
+		     if (tx!=null) tx.rollback();
+		     throw e;
+		 }
+		 finally {
+		     sess.close();
+		 }
+		
+		 
+	 }
+	 
+	/* public void edit(T entity) { getEntityManager().merge(entity); }
 	 * 
 	 * public void remove(T entity) {
 	 * getEntityManager().remove(getEntityManager().merge(entity)); }

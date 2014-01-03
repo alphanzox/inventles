@@ -1,0 +1,25 @@
+<div class='modal-header'>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h3 ng-hide='newItem'>Edit Item: {{item.name}}</h3>
+  <h3 ng-show='newItem'>New Item</h3>
+</div>
+
+<form>
+  <fieldset>
+    <div class='modal-body'>
+			<label class="sr-only" for="itemName">Item Name</label>
+			<input type="text" class="form-control" id="itemName" placeholder="Item Name" ng-model="item.name">
+			<label class="sr-only" for="itemType">Item Type</label>
+			<input type="text" class="form-control" id="itemType" placeholder="Item Type" ng-model="item.type">
+			<label class="sr-only" for="itemSKU">SKU</label>
+			<input type="text" class="form-control" id="itemSKU" placeholder="Item SKU" ng-model="item.sku">
+			<label class="sr-only" for="itemMaker">Maker</label>
+			<input type="text" class="form-control" id="itemMaker" placeholder="Item Maker" ng-model="item.maker">
+	</div>
+		
+	<div class='modal-footer'>
+     <button type="submit" class="btn btn-primary btn-lg btn-block" data-dismiss="modal"  ng-click="update(item)">Save</button>
+    </div>
+		
+</fieldset>
+</form>
