@@ -11,7 +11,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.inventles.data.AbstractFacade;
-import com.inventles.data.pojo.InventlesDO;
 
 public class AbstractREST<T> extends AbstractFacade<T> {
 
@@ -21,22 +20,23 @@ public class AbstractREST<T> extends AbstractFacade<T> {
 
 	@GET
 	@Path("{id}")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Object find(@PathParam("id") Integer id) {
 		Object entity =  (T) super.find(id);
 		return entity;
 	}
 
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<T> findAll1() {
 		return super.findAll();
 	}
 	
+	
 	@POST
-	@Consumes(MediaType.APPLICATION_XML)
-	public void findAll1(InventlesDO event) {
-		System.out.println("Post Called");
+	@Consumes(MediaType.TEXT_PLAIN)
+	public void findAll(String id) {
+		System.out.println("Post Called plain");
 		//return convertToJSON(super.findAll());
 	}
 	

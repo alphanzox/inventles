@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app>
+<head >
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/inventles/js/lib/angular/angular.min.js"></script>
+<script src="/inventles/js/lib/angular/angular-resource.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="/inventles/js/services/item.js"></script>
+<link rel="stylesheet" href="/inventles/css/bootstrap.css">
+<title>:: Items ::</title>
+</head>
+
+
+
+<body ng-controller="Item" >
+<button class="btn btn-primary btn-lg" ng-click="editItem('new')" data-toggle="modal" data-target="#editModal">
+	Add New Item
+</button>
+ <table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Item Name</th>
+			<th>Item Type</th>
+			<th>SKU</th>
+			<th>Maker</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="item in itemList">
+			<td>{{item.itemId}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.type}}</td>
+			<td>{{item.sku}}</td>
+			<td>{{item.maker}}</td>
+			<td><button role='button' class='btn btn-primary btn-lg btn-block' ng-click="editItem(item)" data-toggle="modal" href="#editModal">Edit</button></td>
+    
+		</tr>
+	</table>
+	
+	<div class="modal fade" ng-include="'add.html'" id="editModal" role='dialog'>
+	</div>
+	
+</body>
+</html>

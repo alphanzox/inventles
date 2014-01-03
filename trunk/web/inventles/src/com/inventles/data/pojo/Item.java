@@ -135,4 +135,12 @@ public class Item implements java.io.Serializable {
 		this.itemTransactions = itemTransactions;
 	}
 
+	@Override
+	public String toString() {
+		return "Item [itemId=" + itemId + ", name=" + name + ", type=" + type
+				+ ", sku=" + sku + ", maker=" + maker + "]";
+	}
+	
+	
+
 }
