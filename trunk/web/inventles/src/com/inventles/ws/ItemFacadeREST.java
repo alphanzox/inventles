@@ -15,15 +15,11 @@ public class ItemFacadeREST extends AbstractREST<Item> {
 		super(Item.class);
 	}
   
-  @POST
+  	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String AddItem(Item item) {
-		System.out.println("Post Called json"+item);
-		BusinessEntity be = new BusinessEntity();
-		be.setEntityCode("mk");
-		item.setBusinessEntity(be);
-		super.create(item);
-		return "Success";
-		//return convertToJSON(super.findAll());
+	  item.setBusinessEntity((BusinessEntity)getBusinessEntity());
+	  super.upsert(item);
+	  return "Success";
 	}
 } 

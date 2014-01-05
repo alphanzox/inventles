@@ -2,14 +2,9 @@ package com.inventles.data.pojo;
 
 // Generated Dec 21, 2013 2:31:29 AM by Hibernate Tools 4.0.0
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -22,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "business_entity", catalog = "inventles")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class BusinessEntity implements java.io.Serializable {
+public class BusinessEntity implements java.io.Serializable,InventlesDO {
 
 	private String entityCode;
 	private String name;

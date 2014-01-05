@@ -12,6 +12,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import com.inventles.data.management.InventlesSessionManagement;
+import com.inventles.data.pojo.InventlesDO;
 
 public abstract class AbstractFacade<T> {
 	@PersistenceContext(unitName = "InventlesServicesPU")
@@ -27,13 +28,13 @@ public abstract class AbstractFacade<T> {
 	}
 
 	
-	 public void create(T entity) { 
+	 public void upsert(T entity) { 
 		 Session sess = getSessionFactory().openSession();
 		
 		 Transaction tx = null;
 		 try {
 		     tx = sess.beginTransaction();
-		     sess.save(entity);
+		     sess.saveOrUpdate(entity);
 		     tx.commit();
 		 }catch (Exception e) {
 		     if (tx!=null) tx.rollback();
@@ -46,9 +47,10 @@ public abstract class AbstractFacade<T> {
 		 
 	 }
 	 
-	/* public void edit(T entity) { getEntityManager().merge(entity); }
-	 * 
-	 * public void remove(T entity) {
+	/* public void edit(T entity) { }
+	 public void create(T entity) { }
+	 */
+	/* public void remove(T entity) {
 	 * getEntityManager().remove(getEntityManager().merge(entity)); }
 	 */
 
@@ -62,5 +64,7 @@ public abstract class AbstractFacade<T> {
 		Criteria criteria = session.createCriteria(entityClass);
 		return criteria.list();
 	}
+	
+	public abstract InventlesDO getBusinessEntity();
 
 }

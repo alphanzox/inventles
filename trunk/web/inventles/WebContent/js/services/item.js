@@ -22,6 +22,7 @@ function Item($scope, $http) {
     	  
     	    if (item === 'new') {
     	      $scope.newItem = true;
+    	      $scope.item = {itemId:'',name:'',type:'',sku:'',maker:''};
     	    }
     	    else {
     	      $scope.newItem = false;
@@ -30,6 +31,6 @@ function Item($scope, $http) {
     	    }
     };
     
-    $scope.fetch()
+    $scope.fetch();
 }
 
