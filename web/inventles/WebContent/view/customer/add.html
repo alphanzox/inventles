@@ -1,0 +1,27 @@
+<div class='modal-header'>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h3 ng-hide='newCustomer'>Edit Customer: {{customer.name}}</h3>
+  <h3 ng-show='newCustomer'>New Customer</h3>
+</div>
+
+<form>
+  <fieldset>
+    <div class='modal-body'>
+			<input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="customer.firstName">
+			<input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="customer.lastName">
+			<input type="text" class="form-control" id="cell" placeholder="Cell" ng-model="customer.cell">
+			<input type="text" class="form-control" id="address" placeholder="Address" ng-model="customer.address">
+			<input type="text" class="form-control" id="additionalAddress" placeholder="Additional Address" ng-model="customer.address2">
+			<input type="text" class="form-control" id="city" placeholder="City" ng-model="customer.city">
+			<input type="text" class="form-control" id="zip" placeholder="Zip" ng-model="customer.zip">
+			<input type="text" class="form-control" id="country" placeholder="Country" ng-model="customer.country">
+			<input type="text" class="form-control" id="phone" placeholder="Phone" ng-model="customer.phone">
+			<input type="text" class="form-control" id="email" placeholder="Email" ng-model="customer.email">
+	</div>
+		
+	<div class='modal-footer'>
+     <button type="submit" class="btn btn-primary btn-lg btn-block" data-dismiss="modal"  ng-click="update(customer)">Save</button>
+    </div>
+		
+</fieldset>
+</form>
