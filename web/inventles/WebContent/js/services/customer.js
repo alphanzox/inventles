@@ -1,14 +1,14 @@
 function Customer($scope, $http) {
    
     $scope.fetch = function(){
-    	 $http.get('http://192.168.1.2:8080/inventles/rest/cust').
+    	 $http.get('http://localhost:8080/inventles/rest/cust').
          success(function(data) {
              $scope.customerList = data;
          });    	
     };
     
     $scope.update = function(customer) {
-    	$http.post('http://192.168.1.2:8080/inventles/rest/cust',customer).success(function(response)
+    	$http.post('http://localhost:8080/inventles/rest/cust',customer).success(function(response)
     			  {
     	    $scope.response = response;
     	    $scope.loading = false;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app>
+<head >
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/inventles/js/lib/angular/angular.min.js"></script>
+<script src="/inventles/js/lib/angular/angular-resource.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="/inventles/js/services/inventory.js"></script>
+<link rel="stylesheet" href="/inventles/css/bootstrap.css">
+<title>:: Add Inventory ::</title>
+</head>
+
+
+
+<body ng-controller="Inventory" >
+<form>
+  <fieldset>
+    <div class='modal-body'>
+			<label class="sr-only" for="item">Item</label>
+			<input type="text" class="form-control" id="item" placeholder="Item" ng-model="item.name">
+			<label class="sr-only" for="quantity">Quantity</label>
+			<input type="text" class="form-control" id="quantity" placeholder="Quantity" ng-model="item.maker">
+	</div>
+		
+	<div class='modal-footer'>
+     <button type="submit" class="btn btn-primary btn-lg btn-block" data-dismiss="modal"  ng-click="update(item)">Save</button>
+    </div>
+		
+</fieldset>
+</form>
+	
+</body>
+</html>
