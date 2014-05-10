@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app>
+<head >
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/inventles/js/lib/angular/angular.min.js"></script>
+<script src="/inventles/js/lib/angular/angular-resource.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="/inventles/js/services/inventory.js"></script>
+<link rel="stylesheet" href="/inventles/css/bootstrap.css">
+<title>:: Inventory ::</title>
+</head>
+
+
+
+<body ng-controller="Inventory" >
+
+ <table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Item Name</th>
+			<th>Item Type</th>
+			<th>Item SKU</th>
+			<th>Quantity in Stock</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="inventory in inventoryList">
+			<td>{{inventory.transactionId}}</td>
+			<td>{{inventory.item.name}}</td>
+			<td>{{inventory.item.type}}</td>
+			<td>{{inventory.item.sku}}</td>
+			<td>{{inventory.quantity}}</td>
+    
+		</tr>
+	</table>
+	
+</body>
+</html>
