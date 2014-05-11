@@ -1,7 +1,7 @@
  <div class="modal-dialog">
         <div class="modal-content">
 <div class='modal-header'>
-  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
   <h3 ng-hide='newItem'>Edit Item: {{item.name}}</h3>
   <h3 ng-show='newItem'>New Item</h3>
 </div>
@@ -9,14 +9,22 @@
 <form>
   <fieldset>
     <div class='modal-body'>
-			<label class="sr-only" for="itemName">Item Name</label>
-			<input type="text" class="form-control" id="itemName" placeholder="Item Name" ng-model="item.name">
-			<label class="sr-only" for="itemType">Item Type</label>
-			<input type="text" class="form-control" id="itemType" placeholder="Item Type" ng-model="item.type">
-			<label class="sr-only" for="itemSKU">SKU</label>
-			<input type="text" class="form-control" id="itemSKU" placeholder="Item SKU" ng-model="item.sku">
-			<label class="sr-only" for="itemMaker">Maker</label>
-			<input type="text" class="form-control" id="itemMaker" placeholder="Item Maker" ng-model="item.maker">
+    		<div class="input-group">
+				<span class="input-group-addon" width=>Name</span>
+				<input type="text" class="form-control" id="itemName" ng-model="item.name">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Type</span>
+				<input type="text" class="form-control" id="itemType"  ng-model="item.type">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">SKU</span>
+				<input type="text" class="form-control" id="itemSKU" ng-model="item.sku">
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon">Maker</span>
+				<input type="text" class="form-control" id="itemMaker" ng-model="item.maker">
+			</div>
 	</div>
 		
 	<div class='modal-footer'>
