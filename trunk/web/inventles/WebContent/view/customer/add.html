@@ -1,32 +1,55 @@
+<div class="modal-dialog">
+        <div class="modal-content">
 <div class='modal-header'>
-  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-  <h3 ng-hide='newCustomer'>Edit Customer: {{customer.name}}</h3>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+  <h3 ng-hide='newCustomer'>Edit Customer: {{customer.firstName}} {{customer.lastName}}</h3>
   <h3 ng-show='newCustomer'>New Customer</h3>
 </div>
 
 <form>
   <fieldset>
     <div class='modal-body'>
-    		<label for="firstName">First Name</label>
-			<input type="text" class="form-control" id="firstName" placeholder="First Name" ng-model="customer.firstName">
-			<label for="lastName">Last Name</label>
-			<input type="text" class="form-control" id="lastName" placeholder="Last Name" ng-model="customer.lastName">
-			<label for="cell">Cell</label>
-			<input type="text" class="form-control" id="cell" placeholder="Cell" ng-model="customer.cell">
-			<label for="address">Address</label>
-			<input type="text" class="form-control" id="address" placeholder="Address" ng-model="customer.address">
-			<label for="additionalAddress">Additional Address</label>
-			<input type="text" class="form-control" id="additionalAddress" placeholder="Additional Address" ng-model="customer.address2">
-			<label for="city">City</label>
-			<input type="text" class="form-control" id="city" placeholder="City" ng-model="customer.city">
-			<label for="zip">Zip</label>
-			<input type="text" class="form-control" id="zip" placeholder="Zip" ng-model="customer.zip">
-			<label for="country">Country</label>
-			<input type="text" class="form-control" id="country" placeholder="Country" ng-model="customer.country">
-			<label for="phone">Phone</label>
-			<input type="text" class="form-control" id="phone" placeholder="Phone" ng-model="customer.phone">
-			<label for="email">Email</label>
-			<input type="text" class="form-control" id="email" placeholder="Email" ng-model="customer.email">
+    	<div class="input-group">
+    		<span class="input-group-addon">First Name</span>
+			<input type="text" class="form-control" id="firstName" ng-model="customer.firstName">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Last Name</span>
+			<input type="text" class="form-control" id="lastName" ng-model="customer.lastName">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Cell</span>
+			<input type="text" class="form-control" id="cell"  ng-model="customer.cell">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Address</span>
+			<input type="text" class="form-control" id="address"  ng-model="customer.address">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Address Cont.</span>
+			<input type="text" class="form-control" id="additionalAddress"  ng-model="customer.address2">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">City</span>
+			<input type="text" class="form-control" id="city"  ng-model="customer.city">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Zip</span>
+			<input type="text" class="form-control" id="zip"  ng-model="customer.zip">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Country</span>
+			<input type="text" class="form-control" id="country"  ng-model="customer.country">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Phone</span>
+			<input type="text" class="form-control" id="phone"  ng-model="customer.phone">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Email</span>
+			<input type="text" class="form-control" id="email"  ng-model="customer.email">
+		</div>
+		</div>
 	</div>
 		
 	<div class='modal-footer'>
@@ -35,3 +58,5 @@
 		
 </fieldset>
 </form>
+</div>
+</div>
