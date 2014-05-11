@@ -53,9 +53,9 @@ public class AbstractREST<T> extends AbstractFacade<T> {
 	public InventlesDO getBusinessEntity() {
 		HttpSession session = request.getSession();
 		session.getAttribute("user");
-		// TODO: remove
+		// TODO: Add code to reterive Business Enity from User
 		BusinessEntity be = new BusinessEntity();
-		be.setEntityCode("mk");
+		be.setEntityCode("APL");
 
 		return be;
 	}
