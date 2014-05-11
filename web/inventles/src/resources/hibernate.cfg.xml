@@ -6,11 +6,12 @@
     <session-factory>
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">Password$1</property>
-        <property name="hibernate.connection.url">jdbc:mysql://192.186.211.65:3306/inventles</property>
-        <property name="hibernate.connection.username">power</property>
+        <property name="hibernate.connection.password">umair1</property>
+        <property name="hibernate.connection.url">jdbc:mysql://192.186.211.65:3306</property>
+        <property name="hibernate.connection.username">umair</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="show_sql">true</property>
         <mapping class="com.inventles.data.pojo.Employee" />
         <mapping class="com.inventles.data.pojo.CustomerOrder" />
         <mapping class="com.inventles.data.pojo.Item" />
