@@ -42,7 +42,7 @@ public class AbstractREST<T> extends AbstractFacade<T> {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<T> findAll1() {
+	public List<T> findAll() {
 		return super.findAll();
 	}
 	
