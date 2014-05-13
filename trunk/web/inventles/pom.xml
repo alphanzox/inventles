@@ -7,6 +7,12 @@
 	<packaging>war</packaging>
 	<dependencies>
 		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.glassfish.hk2.external</groupId>
 			<artifactId>asm-all-repackaged</artifactId>
 			<version>2.2.0-b21</version>
@@ -40,6 +46,11 @@
 			<groupId>org.glassfish.hk2</groupId>
 			<artifactId>hk2-api</artifactId>
 			<version>2.2.0-b21</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.30</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.hk2</groupId>
@@ -218,6 +229,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<finalName>inventles</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
 			<resource>
@@ -228,6 +240,19 @@
 			</resource>
 		</resources>
 		<plugins>
+			<!-- Maven Tomcat Plugin -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8080/manager/html</url>
+					<username>admin</username>
+					<password>admin</password>
+					<update>true</update>
+					<path>/inventles</path>
+				</configuration>
+			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
