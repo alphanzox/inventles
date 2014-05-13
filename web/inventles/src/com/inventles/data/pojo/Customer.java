@@ -19,7 +19,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "customer", catalog = "inventles")
 public class Customer implements java.io.Serializable {
-
+	
+	private static final long serialVersionUID = 2940107058796819061L;
+	
 	private int customerId;
 	private BusinessEntity businessEntity;
 	private String firstName;
