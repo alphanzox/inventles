@@ -20,6 +20,8 @@ import javax.persistence.Table;
 @Table(name = "employee", catalog = "inventles")
 public class Employee implements java.io.Serializable {
 
+	private static final long serialVersionUID = -8514088338021606027L;
+	
 	private int employeeId;
 	private BusinessEntity businessEntity;
 	private String firstName;

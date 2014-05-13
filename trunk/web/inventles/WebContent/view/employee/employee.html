@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app>
+<head >
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/inventles/js/lib/angular/angular.min.js"></script>
+<script src="/inventles/js/lib/angular/angular-resource.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.js"></script>
+<script src="/inventles/js/lib/bootstrap/bootstrap.min.js"></script>
+<script src="/inventles/js/services/employee.js"></script>
+<link rel="stylesheet" href="/inventles/css/bootstrap.css">
+<title>:: Employee ::</title>
+</head>
+
+
+
+<body ng-controller="Employee" >
+<button class="btn btn-primary btn-lg" ng-click="editEmployee('new')" data-toggle="modal" data-target="#editModal">
+	Add New Employee
+</button>
+ <table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Cell</th>
+			<th>Address </th>
+			<th>City</th>
+			<th>Zip code</th>
+			<th>Country</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="employee in employeeList">
+			<td>{{employee.employeeId}}</td>
+			<td>{{employee.firstName}}</td>
+			<td>{{employee.lastName}}</td>
+			<td>{{employee.cell}}</td>
+			<td>{{employee.address}} {{employee.address2}}</td>
+			<td>{{employee.city}}</td>
+			<td>{{employee.zip}}</td>
+			<td>{{employee.country}}</td>
+			<td>{{employee.phone}}</td>
+			<td>{{employee.email}}</td>
+			<td><button role='button' class='btn btn-primary btn-lg btn-block' ng-click="editEmployee(employee)" data-toggle="modal" href="#editModal">Edit</button></td>
+    
+		</tr>
+	</table>
+	
+	<div class="modal" ng-include="'add.html'" id="editModal" role='dialog'>
+	</div>
+	
+</body>
+</html>

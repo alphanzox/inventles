@@ -1,0 +1,62 @@
+<div class="modal-dialog">
+        <div class="modal-content">
+<div class='modal-header'>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+  <h3 ng-hide='newEmployee'>Edit Employee: {{employee.firstName}} {{employee.lastName}}</h3>
+  <h3 ng-show='newEmployee'>New Employee</h3>
+</div>
+
+<form>
+  <fieldset>
+    <div class='modal-body'>
+    	<div class="input-group">
+    		<span class="input-group-addon">First Name</span>
+			<input type="text" class="form-control" id="firstName" ng-model="employee.firstName">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Last Name</span>
+			<input type="text" class="form-control" id="lastName" ng-model="employee.lastName">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Cell</span>
+			<input type="text" class="form-control" id="cell"  ng-model="employee.cell">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Address</span>
+			<input type="text" class="form-control" id="address"  ng-model="employee.address">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Address Cont.</span>
+			<input type="text" class="form-control" id="additionalAddress"  ng-model="employee.address2">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">City</span>
+			<input type="text" class="form-control" id="city"  ng-model="employee.city">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Zip</span>
+			<input type="text" class="form-control" id="zip"  ng-model="employee.zip">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Country</span>
+			<input type="text" class="form-control" id="country"  ng-model="employee.country">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Phone</span>
+			<input type="text" class="form-control" id="phone"  ng-model="employee.phone">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon">Email</span>
+			<input type="text" class="form-control" id="email"  ng-model="employee.email">
+		</div>
+		</div>
+	</div>
+		
+	<div class='modal-footer'>
+     <button type="submit" class="btn btn-primary btn-lg btn-block" data-dismiss="modal"  ng-click="update(employee)">Save</button>
+    </div>
+		
+</fieldset>
+</form>
+</div>
+</div>
