@@ -246,9 +246,19 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<url>http://localhost:8080/manager/html</url>
-					<username>admin</username>
-					<password>admin</password>
+					<url>http://localhost:8080/manager/text</url>
+					<!-- add these roles to tomcat-users.xml file
+					<role rolename="manager-gui"/>
+					<role rolename="manager-script"/>
+					<role rolename="manager-status"/>
+					<role rolename="manager-jmx"/>
+					<role rolename="admin"/>
+					<role rolename="admin-gui"/>
+					<user username="admin" password="admin" roles="manager-gui"/>
+					<user username="manager" password="password" roles="manager-script"/> 
+					 -->
+					<username>manager</username>
+					<password>password</password>
 					<update>true</update>
 					<path>/inventles</path>
 				</configuration>
